@@ -9,7 +9,5 @@ namespace SacramentMeetingPlanner.Models
         public DateTime BirthDay { get; set; }
         // just added for the fun of it :D
         public bool MusicalSkills { get; set; }
-
-        public LDSMember() { }
     }
 }
