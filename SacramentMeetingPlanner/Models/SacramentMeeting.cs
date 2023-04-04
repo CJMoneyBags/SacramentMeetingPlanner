@@ -28,24 +28,5 @@ namespace SacramentMeetingPlanner.Models
         [Display(Name = "Closing Prayer")]
 
         public string ClosingPrayerPerson { get; set; }
-
-        public SacramentMeeting(int id, DateTime date,
-            string conductingLeaderName, int openingHymn,
-            int sacramentHymn, string? intermediateHymnOrMusicNumber,
-            int closingHymn, string openingPrayerPerson,
-            string closingPrayerPerson)
-        {
-            Id = id;
-            Date = date;
-            ConductingLeaderName = conductingLeaderName;
-            OpeningHymn = openingHymn;
-            SacramentHymn = sacramentHymn;
-            IntermediateHymnOrMusicalNumber = intermediateHymnOrMusicNumber;
-            ClosingHymn = closingHymn;
-            OpeningPrayerPerson = openingPrayerPerson;
-            ClosingPrayerPerson = closingPrayerPerson;
-        }
-
-        public SacramentMeeting() { }
     }
 }
