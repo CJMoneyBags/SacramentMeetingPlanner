@@ -9,7 +9,6 @@ namespace SacramentMeetingPlanner.Models
         public DateTime Date { get; set; }
         [Display(Name = "Conducting Leader")]
         public string ConductingLeaderName { get; set; }
-        public List<LDSMember>? Speakers = new List<LDSMember>();
         [Display(Name = "Opening Hymn")]
         public int OpeningHymn { get; set; }
         [Display(Name = "Sacrament Hymn")]
@@ -27,5 +26,6 @@ namespace SacramentMeetingPlanner.Models
         [Display(Name = "Closing Prayer")]
 
         public string ClosingPrayerPerson { get; set; }
+        public List<string>? SpeakerSubjects { get; set; }
     }
 }
