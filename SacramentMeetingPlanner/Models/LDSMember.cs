@@ -5,7 +5,7 @@ namespace SacramentMeetingPlanner.Models
     public class LDSMember
     {
         public int Id { get; set; }
-        public int RecordNumber { get; private set; }
+        public int RecordNumber { get; set; }
         public string FullName { get; set; }
         public DateTime BirthDay { get; set; }
         // just added for the fun of it :D
