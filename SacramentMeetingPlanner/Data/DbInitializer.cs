@@ -24,6 +24,7 @@ namespace SacramentMeetingPlanner.Data
                     ClosingHymn = 225,
                     OpeningPrayerPerson = "Calvin Braun",
                     ClosingPrayerPerson = "Alex Vasiuk",
+                    NumberOfSpeakers = 3,
                     SpeakerSubjects = new List<string>()
                     {
                         "Atonement",
@@ -31,6 +32,7 @@ namespace SacramentMeetingPlanner.Data
                         "Prayer"
                     }
                 },
+                // It's gonna be fasting Sunday, so no assigned Speakers
                 new SacramentMeeting
                 {
                     Date = DateTime.Parse("3/19/23"),
@@ -40,11 +42,10 @@ namespace SacramentMeetingPlanner.Data
                     ClosingHymn = 5,
                     OpeningPrayerPerson = "Austin Earl",
                     ClosingPrayerPerson = "Chris Bagwell",
+                    NumberOfSpeakers = 0,
                     SpeakerSubjects = new List<string>()
                     {
-                        "Baptism",
-                        "Holy Ghost",
-                        "Ordinances"
+                        "FastSunday"
                     }
                 }
             };

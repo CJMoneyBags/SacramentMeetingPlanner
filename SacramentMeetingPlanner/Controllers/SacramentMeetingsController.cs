@@ -56,7 +56,7 @@ namespace SacramentMeetingPlanner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,ConductingLeaderName,OpeningHymn,SacramentHymn,IntermediateHymnOrMusicalNumber,ClosingHymn,OpeningPrayerPerson,ClosingPrayerPerson")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Create([Bind("Id,Date,ConductingLeaderName,OpeningHymn,SacramentHymn,IntermediateHymnOrMusicalNumber,ClosingHymn,OpeningPrayerPerson,ClosingPrayerPerson, NumberOfSpeakers")] SacramentMeeting sacramentMeeting)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace SacramentMeetingPlanner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,ConductingLeaderName,OpeningHymn,SacramentHymn,IntermediateHymnOrMusicalNumber,ClosingHymn,OpeningPrayerPerson,ClosingPrayerPerson")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,ConductingLeaderName,OpeningHymn,SacramentHymn,IntermediateHymnOrMusicalNumber,ClosingHymn,OpeningPrayerPerson,ClosingPrayerPerson, NumberOfSpeakers")] SacramentMeeting sacramentMeeting)
         {
             if (id != sacramentMeeting.Id)
             {

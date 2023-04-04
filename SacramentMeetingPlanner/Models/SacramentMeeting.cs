@@ -41,6 +41,10 @@ namespace SacramentMeetingPlanner.Models
         [StringLength(30)]
         public string ClosingPrayerPerson { get; set; }
 
+        [Display(Name = "Number Of Speakers")]
+        [Range(0, int.MaxValue, ErrorMessage ="Number of Speakers must be greater or equal to zero")]
+        public int NumberOfSpeakers { get; set; }
+
         [Display(Name = "Talk Subjects")]
         [NotMapped]
         public List<string>? SpeakerSubjects { get; set; }
