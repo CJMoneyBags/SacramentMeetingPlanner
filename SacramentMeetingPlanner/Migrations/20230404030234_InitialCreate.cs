@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SacramentMeetingPlanner.Migrations
 {
     /// <inheritdoc />
-    public partial class AddSacramentMeetingTable : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,13 +18,13 @@ namespace SacramentMeetingPlanner.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ConductingLeaderName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConductingLeaderName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     OpeningHymn = table.Column<int>(type: "int", nullable: false),
                     SacramentHymn = table.Column<int>(type: "int", nullable: false),
-                    IntermediateHymnOrMusicalNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IntermediateHymnOrMusicalNumber = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     ClosingHymn = table.Column<int>(type: "int", nullable: false),
-                    OpeningPrayerPerson = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ClosingPrayerPerson = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    OpeningPrayerPerson = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    ClosingPrayerPerson = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {

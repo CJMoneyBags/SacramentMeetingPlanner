@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentMeetingPlanner.Models
 {
@@ -11,45 +10,39 @@ namespace SacramentMeetingPlanner.Models
         public DateTime Date { get; set; }
         
         [Display(Name = "Conducting Leader")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        [StringLength(30)]
         public string ConductingLeaderName { get; set; }
         
-        public List<LDSMember> Speakers = new List<LDSMember>();
-        
         [Display(Name = "Opening Hymn")]
+        [Range(1,341)]
         public int OpeningHymn { get; set; }
         
         [Display(Name = "Sacrament Hymn")]
+        [Range(1, 341)]
         public int SacramentHymn { get; set; }
         
         [Display(Name = "Intermediate Hymn Or Musical Number")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        [StringLength(30)]
         public string? IntermediateHymnOrMusicalNumber { get; set; }
-        
+
         [Display(Name = "Closing Hymn")]
+        [Range(1, 341)]
         public int ClosingHymn { get; set; }
-        
+
         [Display(Name = "Opening Prayer")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        [StringLength(30)]
         public string OpeningPrayerPerson { get; set; }
         
         [Display(Name = "Closing Prayer")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        [StringLength(30)]
         public string ClosingPrayerPerson { get; set; }
 
-        public SacramentMeeting(int id, DateTime date,
-            string conductingLeaderName, int openingHymn,
-            int sacramentHymn, string? intermediateHymnOrMusicNumber,
-            int closingHymn, string openingPrayerPerson,
-            string closingPrayerPerson)
-        {
-            Id = id;
-            Date = date;
-            ConductingLeaderName = conductingLeaderName;
-            OpeningHymn = openingHymn;
-            SacramentHymn = sacramentHymn;
-            IntermediateHymnOrMusicalNumber = intermediateHymnOrMusicNumber;
-            ClosingHymn = closingHymn;
-            OpeningPrayerPerson = openingPrayerPerson;
-            ClosingPrayerPerson = closingPrayerPerson;
-        }
-
-        public SacramentMeeting() { }
+        [Display(Name = "Talk Subjects")]
+        [NotMapped]
+        public List<string>? SpeakerSubjects { get; set; }
     }
 }

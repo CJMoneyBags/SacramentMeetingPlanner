@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SacramentMeetingPlanner.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SacramentMeetingPlannerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SacramentMeetingPlannerContext") ?? throw new InvalidOperationException("Connection string 'SacramentMeetingPlannerContext' not found.")));
 
 
 // Add services to the container.
@@ -30,13 +32,13 @@ else
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    
+
     var context = services.GetService<SacramentMeetingPlannerContext>();
     context.Database.EnsureCreated();
     DbInitializer.Initialize(context);
 }
 
-    app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
