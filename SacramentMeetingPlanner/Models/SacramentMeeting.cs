@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentMeetingPlanner.Models
 {
     public class SacramentMeeting
     {
         public int Id { get; set; }
+        
         public DateTime Date { get; set; }
         
         [Display(Name = "Conducting Leader")]
@@ -41,6 +42,7 @@ namespace SacramentMeetingPlanner.Models
         public string ClosingPrayerPerson { get; set; }
 
         [Display(Name = "Talk Subjects")]
+        [NotMapped]
         public List<string>? SpeakerSubjects { get; set; }
     }
 }

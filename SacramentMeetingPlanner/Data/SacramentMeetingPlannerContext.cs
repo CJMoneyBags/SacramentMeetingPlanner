@@ -15,7 +15,5 @@ namespace SacramentMeetingPlanner.Data
         }
 
         public DbSet<SacramentMeetingPlanner.Models.SacramentMeeting> SacramentMeeting { get; set; } = default!;
-
-        public DbSet<SacramentMeetingPlanner.Models.LDSMember> LDSMember { get; set; } = default!;
     }
 }
