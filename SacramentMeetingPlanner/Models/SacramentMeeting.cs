@@ -6,7 +6,8 @@ namespace SacramentMeetingPlanner.Models
     public class SacramentMeeting
     {
         public int Id { get; set; }
-        
+
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         
         [Display(Name = "Conducting Leader")]
