@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace SacramentMeetingPlanner.Models
 {
@@ -10,7 +9,7 @@ namespace SacramentMeetingPlanner.Models
         public DateTime Date { get; set; }
         [Display(Name = "Conducting Leader")]
         public string ConductingLeaderName { get; set; }
-        public List<LDSMember> Speakers = new List<LDSMember>();
+        public List<LDSMember>? Speakers = new List<LDSMember>();
         [Display(Name = "Opening Hymn")]
         public int OpeningHymn { get; set; }
         [Display(Name = "Sacrament Hymn")]
