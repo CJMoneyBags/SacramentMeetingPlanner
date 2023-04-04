@@ -47,7 +47,8 @@ namespace SacramentMeetingPlanner.Models
         public int NumberOfSpeakers { get; set; }
 
         [Display(Name = "Talk Subjects")]
-        [NotMapped]
-        public List<string>? SpeakerSubjects { get; set; }
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        [StringLength(100)]
+        public string SpeakerSubjects { get; set; }
     }
 }
